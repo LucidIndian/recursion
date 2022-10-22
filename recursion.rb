@@ -1,15 +1,13 @@
 puts 'recursion.rb file loaded'
 
 ####### MERGE SORT ########
-# Build a method #merge_sort that takes an array and
-# returns a sorted array, using a recursive merge sort methodology
 
 messy_array = [500, 13, 20, 69, 3, 1, 0, 101, 35]
 
 def merge_sort(messy_array) # method definition
   messy_length = messy_array.length
-  if messy_length < 2 # base case, a single item array
-    messy_array # we just want the value back since it's "sorted"!
+  if messy_length < 2 # BASE CASE, a single item array
+    messy_array # Just want the value back since it's "sorted"!
   elsif messy_length > 1 # no base case, divde array in half
     mid_ind = messy_length / 2 # middle index of end of first sub array
     # Make 2 empty sub arrays of more or less equal length:
@@ -67,7 +65,7 @@ end
 # Iterative method
 def fibs(number)
   fibs_array = []
-  for i in 0...number do # 3 dots excludes last num on purpose (for index)
+  for i in 0...number do # 3 dots excludes last num (for index)
     if i == 0
       fibs_array[i] = 0
     elsif i == 1
@@ -81,11 +79,11 @@ end
 
 # Recursive method. Calling itself until base case
 def fibs_rec(num)
-  if num <= 2
-    rec_fib_array = [0, 1] # BASE CASE
+  if num <= 2 # BASE CASE
+    rec_fib_array = [0, 1] 
   else
     rec_fib_array = fibs_rec(num - 1)
-    rec_fib_array << rec_fib_array[-2] + rec_fib_array[-1] # << Pushes the given object on to the end of this array. 
+    rec_fib_array << rec_fib_array[-2] + rec_fib_array[-1] # Pushes object onto end
   end
   rec_fib_array
 end
